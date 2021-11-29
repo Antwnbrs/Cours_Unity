@@ -9,7 +9,7 @@ public class Fireball : MonoBehaviour
 
     public void OnCollisionEnter(Collision collision)
     {
-        AIMover other = collision.gameObject.GetComponent<AIMover>();
+        EnemyLifeBar other = collision.gameObject.GetComponent<EnemyLifeBar>();
         if (other != null)
         {
             other.life -= puissance;

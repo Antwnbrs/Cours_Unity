@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class GunEnemy : MonoBehaviour
 {
-    public AIMover AIController;
+    public AIMoverFire AIController;
     public Transform PrefabProjectile;
     public float ProjectileStartSpeed = 50;
     public float OffsetForwardShoot = 2;
