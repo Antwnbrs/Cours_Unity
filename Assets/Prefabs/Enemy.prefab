@@ -1214,7 +1214,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a6fac0b283f5d744840e29137949203, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  aimover: {fileID: 272668788}
   life: 100
 --- !u!114 &272668788
 MonoBehaviour:
@@ -1228,7 +1227,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e53dad78dfd49de44b064ae6103610ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  linearSpeed: 3
+  linearSpeed: 1.5
   angularSpeed: 0.2
   dirPlayer: {x: 0, y: 0, z: 0}
   life: 100
@@ -1244,7 +1243,7 @@ CapsuleCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: 0.3
-  m_Height: 1.9
+  m_Height: 1.8
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &4215906424336782901

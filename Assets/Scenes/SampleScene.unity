@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 2138677392}
-  m_IndirectSpecularColor: {r: 0.28502658, g: 0.37139305, b: 0.49600944, a: 1}
+  m_IndirectSpecularColor: {r: 0.2850269, g: 0.3713935, b: 0.49601045, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -131,13 +131,9 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 215868538, guid: 8828ec76352102046afe4e6f65bd2021, type: 3}
-      propertyPath: lifebar
-      value: 
-      objectReference: {fileID: 203780263}
-    - target: {fileID: 215868538, guid: 8828ec76352102046afe4e6f65bd2021, type: 3}
-      propertyPath: AIController
-      value: 
-      objectReference: {fileID: 783046631}
+      propertyPath: ProjectileStartSpeed
+      value: 2.5
+      objectReference: {fileID: 0}
     - target: {fileID: 4215906424091594592, guid: 8828ec76352102046afe4e6f65bd2021, type: 3}
       propertyPath: m_Name
       value: Enemy_Fire
@@ -190,23 +186,8 @@ PrefabInstance:
       propertyPath: attackTrigger
       value: 
       objectReference: {fileID: 782495419}
-    - target: {fileID: 8334037434587591534, guid: 8828ec76352102046afe4e6f65bd2021, type: 3}
-      propertyPath: life
-      value: 80
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8828ec76352102046afe4e6f65bd2021, type: 3}
---- !u!114 &203780263 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 8334037434587591534, guid: 8828ec76352102046afe4e6f65bd2021, type: 3}
-  m_PrefabInstance: {fileID: 203780262}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4a6fac0b283f5d744840e29137949203, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &267559589
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -609,17 +590,6 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 10
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &783046631 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6217313109403881325, guid: 8828ec76352102046afe4e6f65bd2021, type: 3}
-  m_PrefabInstance: {fileID: 203780262}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5c71ca8bd709b6641af8a9f014fab69a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1129054873
 GameObject:
   m_ObjectHideFlags: 0
@@ -1281,17 +1251,9 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1066521892651498214, guid: 85ad98365148abd4fb2c444377439b57, type: 3}
-      propertyPath: m_Height
-      value: 1.8
-      objectReference: {fileID: 0}
-    - target: {fileID: 1066521892651498214, guid: 85ad98365148abd4fb2c444377439b57, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1066521892651498214, guid: 85ad98365148abd4fb2c444377439b57, type: 3}
-      propertyPath: m_Center.y
-      value: 0
+    - target: {fileID: 272668788, guid: 85ad98365148abd4fb2c444377439b57, type: 3}
+      propertyPath: linearSpeed
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4215906424091594592, guid: 85ad98365148abd4fb2c444377439b57, type: 3}
       propertyPath: m_Name
@@ -1299,7 +1261,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4215906424091594592, guid: 85ad98365148abd4fb2c444377439b57, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4215906424091594599, guid: 85ad98365148abd4fb2c444377439b57, type: 3}
       propertyPath: m_RootOrder
@@ -1456,6 +1418,10 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8437934921858326512, guid: 4e6076870ddadf9448f96160acc9f7ce, type: 3}
+      propertyPath: waves.Array.data[1].prefabSpawn
+      value: 
+      objectReference: {fileID: 4215906424091594599, guid: 8828ec76352102046afe4e6f65bd2021, type: 3}
     - target: {fileID: 8437934921858326513, guid: 4e6076870ddadf9448f96160acc9f7ce, type: 3}
       propertyPath: m_RootOrder
       value: 7

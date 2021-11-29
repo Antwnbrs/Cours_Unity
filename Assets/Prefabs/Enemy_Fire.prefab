@@ -1218,7 +1218,6 @@ MonoBehaviour:
   linearSpeed: 6
   angularSpeed: 1
   dirPlayer: {x: 0, y: 0, z: 0}
-  life: 80
   attackTrigger: {fileID: 0}
 --- !u!114 &8334037434587591534
 MonoBehaviour:
@@ -1232,8 +1231,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a6fac0b283f5d744840e29137949203, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  aimover: {fileID: 0}
-  life: 100
+  life: 80
 --- !u!136 &1066521892651498214
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -1260,9 +1258,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e0f779fcbf97b642aaba601d00fdb08, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AIController: {fileID: 0}
+  AIController: {fileID: 6217313109403881325}
+  lifebar: {fileID: 8334037434587591534}
   PrefabProjectile: {fileID: 4659969808242479122, guid: 964fa39e84147554390a7007225f37e0, type: 3}
-  ProjectileStartSpeed: 20
+  ProjectileStartSpeed: 5
   OffsetForwardShoot: 0
   TimeBetweenShots: 1
   firingPoint: {fileID: 4215906423836097338}

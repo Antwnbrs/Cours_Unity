@@ -13,7 +13,8 @@ public class AIMoverFire : MonoBehaviour
     public Vector3 dirPlayer;
     private Rigidbody rb;
     Animator anim;
-    public Collider attackTrigger;
+    Collider attackTrigger;
+    GameObject attackTriggerObject;
 
     public bool WantsToShootPlayer { get; protected set; } = false;
 
@@ -23,6 +24,11 @@ public class AIMoverFire : MonoBehaviour
         player = goPlayer.transform;
         rb = GetComponent<Rigidbody>();
         anim = GetComponent<Animator>();
+        attackTriggerObject = GameObject.Find("TriggerEnemyAttack");
+        if (attackTriggerObject != null)
+        {
+            attackTrigger = attackTriggerObject.GetComponent<Collider>();
+        }
     }
 
     void FixedUpdate()
