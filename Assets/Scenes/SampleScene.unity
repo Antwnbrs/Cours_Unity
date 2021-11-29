@@ -131,6 +131,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 215868538, guid: 8828ec76352102046afe4e6f65bd2021, type: 3}
+      propertyPath: lifebar
+      value: 
+      objectReference: {fileID: 203780263}
+    - target: {fileID: 215868538, guid: 8828ec76352102046afe4e6f65bd2021, type: 3}
       propertyPath: AIController
       value: 
       objectReference: {fileID: 783046631}
@@ -186,8 +190,23 @@ PrefabInstance:
       propertyPath: attackTrigger
       value: 
       objectReference: {fileID: 782495419}
+    - target: {fileID: 8334037434587591534, guid: 8828ec76352102046afe4e6f65bd2021, type: 3}
+      propertyPath: life
+      value: 80
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8828ec76352102046afe4e6f65bd2021, type: 3}
+--- !u!114 &203780263 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8334037434587591534, guid: 8828ec76352102046afe4e6f65bd2021, type: 3}
+  m_PrefabInstance: {fileID: 203780262}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a6fac0b283f5d744840e29137949203, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &267559589
 PrefabInstance:
   m_ObjectHideFlags: 0

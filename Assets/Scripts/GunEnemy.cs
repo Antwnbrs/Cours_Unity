@@ -5,6 +5,7 @@ using UnityEngine;
 public class GunEnemy : MonoBehaviour
 {
     public AIMoverFire AIController;
+    public EnemyLifeBar lifebar;
     public Transform PrefabProjectile;
     public float ProjectileStartSpeed = 50;
     public float OffsetForwardShoot = 2;
@@ -17,7 +18,7 @@ public class GunEnemy : MonoBehaviour
     {
         TimeShoot -= Time.deltaTime;
 
-        if (AIController.WantsToShootPlayer && TimeShoot <= 0 && AIController.life >0)
+        if (AIController.WantsToShootPlayer && TimeShoot <= 0 && lifebar.life >0)
         {
             TimeShoot = TimeBetweenShots;
 

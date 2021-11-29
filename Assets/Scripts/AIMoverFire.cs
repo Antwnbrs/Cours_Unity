@@ -11,7 +11,6 @@ public class AIMoverFire : MonoBehaviour
 
     private Transform player;
     public Vector3 dirPlayer;
-    public float life = 100;
     private Rigidbody rb;
     Animator anim;
     public Collider attackTrigger;
@@ -50,15 +49,6 @@ public class AIMoverFire : MonoBehaviour
             } */
         }
 
-
-        if (life <= 0)
-        { 
-            anim.SetBool("Death", true);
-            Destroy(rb);
-            linearSpeed = 0;
-            angularSpeed = 0;
-            Destroy(gameObject, 5);
-        }
     }
 
     void OnTriggerEnter(Collider other)
