@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AIMover : MonoBehaviour
+public class AIMoverFire : MonoBehaviour
 {
     [Tooltip("Vitesse de déplacement"), Range(1, 15)]
     public float linearSpeed = 6;
@@ -11,7 +11,6 @@ public class AIMover : MonoBehaviour
 
     private Transform player;
     public Vector3 dirPlayer;
-    public float life = 100;
     private Rigidbody rb;
     Animator anim;
     public Collider attackTrigger;
@@ -39,7 +38,7 @@ public class AIMover : MonoBehaviour
             Quaternion rotation = Quaternion.LookRotation(dirPlayer);
             transform.rotation = Quaternion.Slerp(transform.rotation, rotation, angularSpeed);
 
-            if (rb.velocity.magnitude < 10)
+          /*  if (rb.velocity.magnitude < 10)
             {
                 rb.AddForce(transform.forward * 5 * linearSpeed);
             }
@@ -47,8 +46,9 @@ public class AIMover : MonoBehaviour
             if (anim != null)
             {
                 anim.SetFloat("Speed", rb.velocity.magnitude);
-            }
+            } */
         }
+
     }
 
     void OnTriggerEnter(Collider other)
