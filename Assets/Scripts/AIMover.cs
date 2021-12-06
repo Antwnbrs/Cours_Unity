@@ -15,6 +15,7 @@ public class AIMover : MonoBehaviour
     private Rigidbody rb;
     Animator anim;
     public Collider attackTrigger;
+    public float damage = 20;
 
     public bool WantsToShootPlayer { get; protected set; } = false;
 
@@ -29,11 +30,10 @@ public class AIMover : MonoBehaviour
     void FixedUpdate()
     {
 
-        Debug.DrawLine(transform.position, player.position, Color.magenta);
+        // Debug.DrawLine(transform.position, player.position, Color.magenta);
         if (rb != null)
         {
             dirPlayer = player.position - transform.position;
-            //dirPlayer = dirPlayer.normalized;
 
             dirPlayer.y = 0;
             Quaternion rotation = Quaternion.LookRotation(dirPlayer);
@@ -51,40 +51,24 @@ public class AIMover : MonoBehaviour
         }
     }
 
-    void OnTriggerEnter(Collider other)
+    void OnCollisionEnter(Collision collision)
     {
-        if (other = attackTrigger)
+        PlayerLifeBar other = collision.gameObject.GetComponent<PlayerLifeBar>();
+        if (other.playerLife >= 1)
         {
-            rb.isKinematic = true;
-            anim.SetBool("CanAttack", true);
-            StartCoroutine(Delay());
-
+            other.playerLife -= damage;
+            damage = 0;
+            rb.AddForce(transform.forward*-1000);
+            other.OnDamageReceive();
+                        
+            StartCoroutine(DmgReset());
         }
-
     }
 
-    void OnTriggerExit(Collider other)
+    
+    IEnumerator DmgReset()
     {
-       if (other = attackTrigger)
-        {
-            anim.SetBool("CanAttack", false);
-            rb.isKinematic = false;
-            WantsToShootPlayer = false;
-        }
-
-    }
-    /*  private void OnDrawGizmos()
-      {
-          Gizmos.color = Color.green;
-          Gizmos.DrawLine(transform.position, transform.position + dirPlayer);
-      } */
-
-
-    IEnumerator Delay()
-    {
-        yield return new WaitForSeconds(0.5f);
-        WantsToShootPlayer = true;
         yield return new WaitForSeconds(1);
-        WantsToShootPlayer = false;
+        damage = 20;
     }
 } 
