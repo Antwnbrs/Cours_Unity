@@ -48,6 +48,7 @@ public class InputController : Controller
         }
 
         WantsToShoot = Input.GetButton("Fire1");
+        WantsToJump = Input.GetButton("Jump");
 
         //On applique doucement
         SmoothWantedDirectionLook(Time.deltaTime);

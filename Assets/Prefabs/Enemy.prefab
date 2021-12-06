@@ -1215,6 +1215,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   life: 100
+  shelteranim: {fileID: 0}
 --- !u!114 &272668788
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1227,7 +1228,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e53dad78dfd49de44b064ae6103610ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  linearSpeed: 1.5
+  linearSpeed: 2
   angularSpeed: 0.2
   dirPlayer: {x: 0, y: 0, z: 0}
   life: 100

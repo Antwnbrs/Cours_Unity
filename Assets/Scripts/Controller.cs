@@ -15,6 +15,7 @@ public abstract class Controller : MonoBehaviour
     private const float SmoothFactorDivisor = 1e6f;
 
     public bool WantsToShoot { get; protected set; } = false;
+    public bool WantsToJump { get; protected set; } = false;
 
     protected void SmoothWantedDirectionLook(float deltaTime)
     {

@@ -11,6 +11,7 @@ public class Body : MonoBehaviour
     public float rotationSpeed = 180;
     public float groundTouchDistance = 0.1f;
     private bool touchGround = false;
+    bool groundCheck = false;
 
 
     // Update is called once per frame
@@ -85,5 +86,25 @@ public class Body : MonoBehaviour
             GetComponent<Rigidbody>().angularVelocity = new Vector3();
         }
 
+        if (MyController.WantsToJump == true && groundCheck)
+        {
+            GetComponent<Rigidbody>().AddForce(0, 250, 0);
+        }
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+
+        if (collision.gameObject.tag == "Ground")
+        {
+            groundCheck = true;
+        }
+    }
+    private void OnCollisionExit(Collision collision)
+    {
+        if (collision.gameObject.tag == "Ground")
+        {
+            groundCheck = false;
+        }
     }
 }

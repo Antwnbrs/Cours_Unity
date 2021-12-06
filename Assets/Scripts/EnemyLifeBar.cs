@@ -8,6 +8,7 @@ public class EnemyLifeBar : MonoBehaviour
     Rigidbody rb;
     AIMover aimover;
     public float life = 100;
+    public Animator shelteranim;
 
 
     // Start is called before the first frame update
@@ -15,6 +16,7 @@ public class EnemyLifeBar : MonoBehaviour
     {
         anim = GetComponent<Animator>();
         rb = GetComponent<Rigidbody>();
+        aimover = GetComponent<AIMover>();
     }
 
     // Update is called once per frame
@@ -23,6 +25,10 @@ public class EnemyLifeBar : MonoBehaviour
         if (life <= 0)
         {
             anim.SetBool("Death", true);
+            if (shelteranim != null)
+            {
+                shelteranim.SetTrigger("Death");
+            }
             Destroy(rb);
             Destroy(gameObject, 5);
             if (aimover != null)
