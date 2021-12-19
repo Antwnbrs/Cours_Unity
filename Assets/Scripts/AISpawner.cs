@@ -87,9 +87,4 @@ public class AISpawner : MonoBehaviour
             }
         }
     }
-    private void OnDrawGizmos()
-    {
-        /*Gizmos.color = Color.green;
-        Gizmos.DrawLine(spawnPoint.position, spawnPoint.position + lastImpulse);*/
-    }
 }
