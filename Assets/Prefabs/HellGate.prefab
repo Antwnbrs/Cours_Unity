@@ -524,7 +524,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8437934921858326514}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 378d144ef37228d43b625d32d3220c2f, type: 3}
   m_Name: 
@@ -535,10 +535,8 @@ MonoBehaviour:
     prefabSpawn: {fileID: 4215906424091594599, guid: 85ad98365148abd4fb2c444377439b57, type: 3}
   - nbSpawn: 5
     prefabSpawn: {fileID: 4215906424091594599, guid: 85ad98365148abd4fb2c444377439b57, type: 3}
-  - nbSpawn: 7
-    prefabSpawn: {fileID: 4215906424091594599, guid: 85ad98365148abd4fb2c444377439b57, type: 3}
   timeNextSpawn: 1
-  timeNextWave: 10
+  timeNextWave: 20
   time: 0
   timeMax: 1
 --- !u!95 &185962494
