@@ -9,11 +9,11 @@ public class FirstPersonView : MonoBehaviour
     public float SmoothFactor = 0.001f;
     private const float SmoothFactorDivisor = 1e6f;
 
-
     void Start()
     {
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
+
     }
 
     void Update()

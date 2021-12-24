@@ -9,11 +9,13 @@ public class VictoryCount : MonoBehaviour
     public float KillGoal;
     InputController inputController;
     SceneSwitcher sceneSwitcher;
+    Rigidbody rb;
 
     void Start()
     {
         inputController = GetComponent<InputController>();
         sceneSwitcher = GameObject.Find("SceneSwitcher").GetComponent<SceneSwitcher>();
+        rb = GetComponentInChildren<Rigidbody>();
     }
 
     // Update is called once per frame
@@ -24,6 +26,7 @@ public class VictoryCount : MonoBehaviour
         {
             Debug.Log("Victory");
             inputController.enabled = false;
+            rb.isKinematic = true;
             StartCoroutine(WaitForVictory());
         }
         
