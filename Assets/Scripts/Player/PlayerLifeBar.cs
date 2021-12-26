@@ -10,17 +10,19 @@ public class PlayerLifeBar : MonoBehaviour
     Rigidbody rb;
     public float playerLife = 100;
     public Image bar;
-    public ParticleSystem damageEffect;
+    public ParticleSystem damageEffectVFX;
     FirstPersonView FirstPersonView;
-    AudioSource playerDeathSound;
+    public AudioSource playerDeathSFX;
+    public AudioSource damageEffectSFX;
     Gun Gun;
+    bool playerIsDead = false;
+    bool deathSoundPlayed = false;
     // Start is called before the first frame update
     void Start()
     {
         rb = gameObject.GetComponent<Rigidbody>();
         FirstPersonView = GameObject.Find("Main Camera").GetComponent<FirstPersonView>();
         Gun = GameObject.Find("Main Camera").GetComponent<Gun>();
-        playerDeathSound = gameObject.GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -49,6 +51,18 @@ public class PlayerLifeBar : MonoBehaviour
         {
             OnDeath();
         }
+
+
+        if (playerIsDead == true)
+        {
+            StartCoroutine(ReloadScene());
+
+            if (deathSoundPlayed == false)
+            {
+                playerDeathSFX.Play();
+                deathSoundPlayed = true;
+            }
+        }
     }
 
     public void SetHealthBarColor(Color healthColor)
@@ -58,20 +72,21 @@ public class PlayerLifeBar : MonoBehaviour
 
     public void OnDamageReceive()
     {
-        damageEffect.Play();
+        damageEffectVFX.Play();
+        damageEffectSFX.Play();
     }
 
     public void OnDeath()
     {
-        playerDeathSound.Play();
         HandAnim.SetTrigger("Death");
         rb.isKinematic = true;
         FirstPersonView.enabled = false;
         Gun.enabled = false;
-        StartCoroutine(ReloadScene());
+        playerIsDead = true;
     }
 
-    IEnumerator ReloadScene()
+
+IEnumerator ReloadScene()
     {
         yield return new WaitForSeconds(3);
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);

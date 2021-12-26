@@ -9,7 +9,7 @@ public class OutroSceneScript : MonoBehaviour
     void Start()
     {
         OutroUI.enabled = false;
-        Debug.Log("Starting Coroutine...");
+        // Debug.Log("Starting Coroutine...");
         StartCoroutine(WaitForOutroAnim());
     }
 
@@ -23,6 +23,6 @@ public class OutroSceneScript : MonoBehaviour
     {
         yield return new WaitForSeconds(13);
         OutroUI.enabled = true;
-        Debug.Log("UI is enabled.");
+        // Debug.Log("UI is enabled.");
     }
 }

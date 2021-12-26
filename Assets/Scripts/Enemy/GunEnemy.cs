@@ -12,7 +12,12 @@ public class GunEnemy : MonoBehaviour
     public float TimeBetweenShots = 0.5f;
     private float TimeShoot = 0;
     public Transform firingPoint;
-    public AudioSource firingSound;
+    // public AudioSource firingSound;
+
+    private void Awake()
+    {
+        // firingSound = GetComponent<AudioSource>();
+    }
 
     void Update()
     {
@@ -26,7 +31,7 @@ public class GunEnemy : MonoBehaviour
             firingPoint.position + -firingPoint.forward * OffsetForwardShoot, firingPoint.rotation);
 
             proj.GetComponent<Rigidbody>().AddForce(transform.forward * ProjectileStartSpeed, ForceMode.Impulse);
-           // firingSound.Play();
+            // firingSound.Play();
         }
     }
 }

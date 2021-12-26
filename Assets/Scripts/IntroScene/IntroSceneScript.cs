@@ -6,6 +6,7 @@ public class IntroSceneScript : MonoBehaviour
 {
     public Animator playerHandAnim;
     SceneSwitcher sceneSwitcher;
+    public Animator EnemyAnim;
     // Start is called before the first frame update
     void Start()
     {
@@ -16,12 +17,12 @@ public class IntroSceneScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        EnemyAnim.SetFloat("Speed", 1);
     }
 
     IEnumerator IntroSceneWait()
     {
-        yield return new WaitForSeconds(7);
+        yield return new WaitForSeconds(15);
         playerHandAnim.SetTrigger("Intro");
         StartCoroutine(WaitForIntroAnim());
     }

@@ -7,10 +7,12 @@ using UnityEngine.UI;
 public class SceneSwitcher : MonoBehaviour
 {
     string currentScene;
+    MusicPlayer MusicPlayer;
     // Start is called before the first frame update
     void Start()
     {
         currentScene = SceneManager.GetActiveScene().name;
+        MusicPlayer = GameObject.FindGameObjectWithTag("Music").GetComponent<MusicPlayer>();
     }
 
     // Update is called once per frame
@@ -22,6 +24,11 @@ public class SceneSwitcher : MonoBehaviour
             {
                 LoadIntro();
             }
+        }
+
+        if (MusicPlayer.isPlaying == true)
+        {
+            MusicPlayer.StopMusic();
         }
     }
 
